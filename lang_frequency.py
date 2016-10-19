@@ -15,11 +15,11 @@ def get_most_frequent_words(text):
     words = re.sub(r'[{}{}]'.format(punctuation, '\\n\\t\\r'), " ", text)
     for word in words.split():
         count_word[word] += 1
-    return sorted(count_word.items(), key=lambda x: x[1], reverse=True)[:10]
-
+    top_ten_words = sorted(count_word.items(), key=lambda x: x[1], reverse=True)[:10]
+    return top_ten_words
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Top 10 word in text')
+    parser = argparse.ArgumentParser(description='Print popular ten word in text')
     parser.add_argument('-file', dest='filepath',
                         help='Input filepath and filename')
     args = parser.parse_args()
