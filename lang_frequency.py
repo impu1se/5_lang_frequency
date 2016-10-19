@@ -18,6 +18,7 @@ def get_most_frequent_words(text):
     top_ten_words = sorted(count_word.items(), key=lambda x: x[1], reverse=True)[:10]
     return top_ten_words
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Print popular ten word in text')
     parser.add_argument('-file', dest='filepath',
